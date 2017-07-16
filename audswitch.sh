@@ -5,7 +5,7 @@
 #pacmd list-sinks | awk '/device.icon_name/ {print}'
 listofsinks=$(pacmd list-sinks | awk '/index/ {print}')
 echo "$listofsinks"
-#activeport=$(echo "$listofsinks" | grep -e '* index: [0-9]')
+activeport=$(echo "$listofsinks" | grep -e "[*] index: [0-9]")
 echo "$activeport"
 
 case "$activeport" in
